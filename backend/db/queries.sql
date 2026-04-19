@@ -21,21 +21,21 @@ update categories set active = 0 where id = 3;
 -- get con categoria
 select p.*, c.name as category_name
 from products p
-join categories c on p.category_id = c.id
+join categories c on p.categories_id = c.id
 where p.active = 1 and c.active = 1;
 
 -- get por id
 select p.*, c.name as category_name
 from products p
-join categories c on p.category_id = c.id
+join categories c on p.categories_id = c.id
 where p.id = 5;
 
 -- Insertar
-insert into products (category_id, name, price, stock)
+insert into products (categories_id, name, price, stock)
 values (1, 'Cafe con leche', 35.00, 100);
 
 -- actuzalizar
-update products set category_id = 2, name = 'Cafe negro', price = 45.00, stock = 80
+update products set categories_id = 2, name = 'Cafe negro', price = 45.00, stock = 80
 where id = 5;
 
 -- borrado logico
