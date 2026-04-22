@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFE - Gerencial</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+    <a href="venta.html">Venta</a>
+    <a href="index.html">Gestión</a>
+    <a href="reporte.html">Gerencial</a>
+</nav>
+
+<div class="container">
+    <h1>Panel Gerencial</h1>
+
+    <div class="layout">
+
+        <div class="sale-view">
+            <div class="sale-header"><h2>Filtro</h2></div>
+            <div class="sale-body">
+
+                <div class="form">
+                    <input id="filter-from" type="date">
+                    <input id="filter-to" type="date">
+                    <button id="filter-submit" class="primary">Aplicar</button>
+                </div>
+
+                <div class="section-title">Top 3 productos</div>
+                <table>
+                    <thead>
+                        <tr><th>#</th><th>Producto</th><th>Ventas</th></tr>
+                    </thead>
+                    <tbody id="top3-body">
+                        <tr><td colspan="3">Cargando...</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="section-title">Ventas por periodo</div>
+                <table>
+                    <thead>
+                        <tr><th>Producto</th><th>Cantidad vendida</th></tr>
+                    </thead>
+                    <tbody id="ventas-body">
+                        <tr><td colspan="2">Cargando...</td></tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="products-view">
+            <div class="products-header"><h2>Ventas por producto</h2></div>
+            <div class="products-list">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/reporte.js"></script>
+<script>
+    initReporte();
+</script>
+</body>
+</html>

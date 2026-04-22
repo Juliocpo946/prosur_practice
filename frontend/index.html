@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFE - Gestión</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+    <a href="venta.html">Venta</a>
+    <a href="index.html">Gestión</a>
+    <a href="reporte.html">Gerencial</a>
+</nav>
+
+<div class="container">
+    <h1>Gestión</h1>
+
+    <div class="layout">
+
+        <div class="sale-view">
+            <div class="sale-header"><h2>Categorías</h2></div>
+            <div class="sale-body">
+                <div class="form">
+                    <input id="cat-name" type="text" placeholder="Nombre de categoría">
+                    <span id="cat-error" class="error-label"></span>
+                    <button id="cat-submit" class="primary">Agregar</button>
+                </div>
+                <div id="categories"></div>
+            </div>
+        </div>
+
+        <div class="products-view">
+            <div class="products-header"><h2>Productos</h2></div>
+            <div class="products-list">
+                <div class="form">
+                    <select id="prod-category-id"><option value="">Selecciona categoria</option></select>
+                    <input id="prod-name" type="text" placeholder="Nombre del producto">
+                    <input id="prod-price" type="number" placeholder="Precio">
+                    <input id="prod-stock" type="number" placeholder="Stock">
+                    <span id="prod-error" class="error-label"></span>
+                    <button id="prod-submit" class="primary">Agregar</button>
+                </div>
+                <div id="products"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/categorias.js"></script>
+<script src="js/productos.js"></script>
+<script>
+    initCategories();
+    initProducts();
+    mostrarCategorias();
+    mostrarProductos();
+</script>
+</body>
+</html>

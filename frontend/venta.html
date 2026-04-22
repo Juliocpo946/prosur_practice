@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFE - Venta</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+    <a href="venta.html">Venta</a>
+    <a href="index.html">Gestión</a>
+    <a href="reporte.html">Gerencial</a>
+</nav>
+
+<div class="container">
+    <div class="layout">
+
+        <div class="products-view">
+            <div class="products-header">
+                <h2>Productos</h2>
+            </div>
+            <div class="products-list" id="productos-lista">
+                <p>Cargando...</p>
+            </div>
+        </div>
+
+        <div class="sale-view">
+            <div class="sale-header">
+                <h2>Venta actual</h2>
+            </div>
+
+            <div class="sale-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cant</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resumen-body">
+                        <tr id="resumen-vacio">
+                            <td colspan="4">Sin productos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sale-footer">
+                <h3>Total: $<span id="venta-total">0</span></h3>
+                <span id="sale-error" class="error-label"></span>
+                <div id="sale-result"></div>
+                <button id="sale-submit" class="primary">Cobrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/venta.js"></script>
+<script>
+    initVenta();
+</script>
+</body>
+</html>
