@@ -9,7 +9,7 @@ const index = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al obtener los productos",
+            message: "ocurrió un error al obtener los productos",
             error: error.message
         });
     }
@@ -32,7 +32,7 @@ const getById = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al obtener el producto",
+            message: "ocurrió un error al obtener el producto",
             error: error.message
         });
     }
@@ -55,7 +55,7 @@ const create = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al crear el producto",
+            message: "ocurrió un error al crear el producto",
             error: error.message
         });
     }
@@ -94,7 +94,7 @@ const deleteLogico = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al eliminar el producto",
+            message: "ocurrió un error al eliminar el producto",
             error: error.message
         });
     }

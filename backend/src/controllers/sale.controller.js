@@ -36,7 +36,7 @@ const create = async (req, res) => {
         connection.end();
 
         return res.status(500).json({
-            message: "ocurrio un error al crear la venta",
+            message: "ocurrió un error al crear la venta",
             error: error.message
         });
     }

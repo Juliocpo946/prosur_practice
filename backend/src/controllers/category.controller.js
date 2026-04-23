@@ -9,7 +9,7 @@ const index = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al obtener las categorías",
+            message: "ocurrió un error al obtener las categorías",
             error: error.message
         });
     }
@@ -22,7 +22,7 @@ const getById = async (req, res) => {
 
         if (!category) {
             return res.status(404).json({
-                message: `no se encontrp la categoría con id ${idCategory}`
+                message: `no se encontro la categoría con id ${idCategory}`
             });
         }
 
@@ -32,7 +32,7 @@ const getById = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al obtener la categoría",
+            message: "ocurrió un error al obtener la categoría",
             error: error.message
         });
     }
@@ -52,7 +52,7 @@ const create = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al crear la categoría",
+            message: "ocurrió un error al crear la categoría",
             error: error.message
         });
     }
@@ -72,7 +72,7 @@ const update = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocrurrio un error al actualizar la categoría",
+            message: "ocurrió un error al actualizar la categoría",
             error: error.message
         });
     }
@@ -88,7 +88,7 @@ const deleteLogico = async (req, res) => {
         });
     } catch (error) {
         return res.status(500).json({
-            message: "ocurrio un error al eliminar la categoría",
+            message: "ocurrió un error al eliminar la categoría",
             error: error.message
         });
     }

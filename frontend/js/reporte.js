@@ -27,14 +27,15 @@ function agruparPorProducto(ventas) {
         var items = ventas[i].items || [];
         for (var j = 0; j < items.length; j++) {
             var nombre = items[j].product_name || "Producto " + items[j].product_id;
-            if (!mapa[nombre]) mapa[nombre] = 0;
-            mapa[nombre] += Number(items[j].quantity);
+            if (!mapa[nombre]) mapa[nombre] = { qty: 0, ingreso: 0 };
+            mapa[nombre].qty += Number(items[j].quantity);
+            mapa[nombre].ingreso += Number(items[j].quantity) * Number(items[j].unit_price);
         }
     }
 
     var resultado = [];
     for (var nombre in mapa) {
-        resultado.push({ name: nombre, qty: mapa[nombre] });
+        resultado.push({ name: nombre, qty: mapa[nombre].qty, ingreso: mapa[nombre].ingreso });
     }
     resultado.sort(function(a, b) { return b.qty - a.qty; });
     return resultado;
@@ -80,6 +81,7 @@ function llenarTabla(ventas) {
         var tr = tbody.insertRow();
         tr.insertCell().textContent = todos[i].name;
         tr.insertCell().textContent = todos[i].qty;
+        tr.insertCell().textContent = "$" + todos[i].ingreso.toFixed(2);
     }
 }
 
